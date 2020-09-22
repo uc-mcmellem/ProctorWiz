@@ -1,2 +1,0 @@
-# ProctorWiz
-Senior design project 
