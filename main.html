@@ -1,6 +1,6 @@
 <html>
 <head>
-    <p>This is to record the screen and not webcam</p>
+    <p>This is to record the screen and not</p>
         
         <p><button id="start">Start Capture</button>&nbsp;<button id="stop">Stop Capture</button></p>
         
@@ -11,36 +11,27 @@
         <br>
         <pre id="log"></pre>
 
-        function stopCapture(evt) {
-            let tracks = videoElem.srcObject.getTracks();
-          
-            tracks.forEach(track => track.stop());
-            videoElem.srcObject = null;
-          }
-          function dumpOptionsInfo() {
-            const videoTrack = videoElem.srcObject.getVideoTracks()[0];
-           
-            console.info("Track settings:");
-            console.info(JSON.stringify(videoTrack.getSettings(), null, 2));
-            console.info("Track constraints:");
-            console.info(JSON.stringify(videoTrack.getConstraints(), null, 2));
-          }
-          #video {
-            border: 1px solid #999;
-            width: 98%;
-            max-width: 860px;
-          }
-          
-          .error {
-            color: red;
-          }
-          
-          .warn {
-            color: orange;
-          }
-          
-          .info {
-            color: darkgreen;
-          }
+       <body>
+            <div id="container">
+                <video autoplay="true" id="videoElement">
+                    
+                </video>
+            </div>
+            
+            <script>
+            var screen = document.querySelector("#videoElement");
+
+            async function startCapture(displayMediaOptions) {
+ // let captureStream = null;
+
+  try {
+    videoElem.srcobject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+  } catch(err) {
+    console.error("Error: " + err);
+  }
+//  return captureStream;
+}
+            </script>
+            </body>     
 </head>
 </html>
