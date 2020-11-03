@@ -14,8 +14,8 @@
     }
 </style>
 
-<title>Screen Recording | RecordRTC</title>
-<h1>Screen Recording using RecordRTC</h1>
+<title>Screen Recording</title>
+<h1>Screen Recording</h1>
 
 <br>
 
@@ -82,6 +82,8 @@ function stopRecordingCallback() {
     recorder.destroy();
     recorder = null;
 
+    invokeSaveAsDialog(this.getBlob(), 'filename.webm');
+
     document.getElementById('btn-start-recording').disabled = false;
 }
 
@@ -108,6 +110,7 @@ document.getElementById('btn-start-recording').onclick = function() {
 document.getElementById('btn-stop-recording').onclick = function() {
     this.disabled = true;
     recorder.stopRecording(stopRecordingCallback);
+    
 };
 
 function addStreamStopListener(stream, callback) {
@@ -134,9 +137,3 @@ function addStreamStopListener(stream, callback) {
 
 <br><br>
 
-<footer style="margin-top: 20px; text-align: left;">
-    <p style="padding: 5px 10px;"><b>Hints:</b> Are you using Chrome version 71? Please enable "chrome://flags/#enable-experimental-web-platform-features"</p>
-    <p style="padding: 5px 10px;"><b>Browser support:</b> Firefox, Edge and Chrome &gt= 71</p>
-    <div><small id="send-message"></small></div>
-</footer>
-<script src="https://www.webrtc-experiment.com/common.js"></script>
