@@ -1,139 +1,27 @@
-<style>
-    html, body {
-        margin: 0!important;
-        padding: 0!important;
-        text-align: center;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 1em;
-    }
-
-    video {
-        width: 30%;
-        border-radius: 5px;
-        border: 1px solid black;
-    }
-</style>
-
-<title>Screen Recording</title>
-<h1>Screen Recording</h1>
-
-<br>
-
-<button id="btn-start-recording">Start Recording</button>
-<button id="btn-stop-recording" disabled>Stop Recording</button>
-
-<hr>
-<video controls autoplay playsinline></video>
-
-<script src="/RecordRTC.js"></script>
-<script>
-var video = document.querySelector('video');
-
-if(!navigator.getDisplayMedia && !navigator.mediaDevices.getDisplayMedia) {
-    var error = 'Your browser does NOT support the getDisplayMedia API.';
-    document.querySelector('h1').innerHTML = error;
-
-    document.querySelector('video').style.display = 'none';
-    document.getElementById('btn-start-recording').style.display = 'none';
-    document.getElementById('btn-stop-recording').style.display = 'none';
-    throw new Error(error);
-}
-
-function invokeGetDisplayMedia(success, error) {
-    var displaymediastreamconstraints = {
-        video: {
-            displaySurface: 'monitor', // monitor, window, application, browser
-            logicalSurface: true,
-            cursor: 'always' // never, always, motion
-        }
-    };
-
-    // above constraints are NOT supported YET
-    // that's why overriding them
-    displaymediastreamconstraints = {
-        video: true
-    };
-
-    if(navigator.mediaDevices.getDisplayMedia) {
-        navigator.mediaDevices.getDisplayMedia(displaymediastreamconstraints).then(success).catch(error);
-    }
-    else {
-        navigator.getDisplayMedia(displaymediastreamconstraints).then(success).catch(error);
-    }
-}
-
-function captureScreen(callback) {
-    invokeGetDisplayMedia(function(screen) {
-        addStreamStopListener(screen, function() {
-            document.getElementById('btn-stop-recording').click();
-        });
-        callback(screen);
-    }, function(error) {
-        console.error(error);
-        alert('Unable to capture your screen. Please check console logs.\n' + error);
-    });
-}
-
-function stopRecordingCallback() {
-    video.src = video.srcObject = null;
-    video.src = URL.createObjectURL(recorder.getBlob());
-    
-    recorder.screen.stop();
-    recorder.destroy();
-    recorder = null;
-
-    invokeSaveAsDialog(this.getBlob(), 'filename.webm');
-
-    document.getElementById('btn-start-recording').disabled = false;
-}
-
-var recorder; // globally accessible
-
-document.getElementById('btn-start-recording').onclick = function() {
-    this.disabled = true;
-    captureScreen(function(screen) {
-        video.srcObject = screen;
-
-        recorder = RecordRTC(screen, {
-            type: 'video'
-        });
-
-        recorder.startRecording();
-
-        // release screen on stopRecording
-        recorder.screen = screen;
-
-        document.getElementById('btn-stop-recording').disabled = false;
-    });
-};
-
-document.getElementById('btn-stop-recording').onclick = function() {
-    this.disabled = true;
-    recorder.stopRecording(stopRecordingCallback);
-    
-};
-
-function addStreamStopListener(stream, callback) {
-    stream.addEventListener('ended', function() {
-        callback();
-        callback = function() {};
-    }, false);
-    stream.addEventListener('inactive', function() {
-        callback();
-        callback = function() {};
-    }, false);
-    stream.getTracks().forEach(function(track) {
-        track.addEventListener('ended', function() {
-            callback();
-            callback = function() {};
-        }, false);
-        track.addEventListener('inactive', function() {
-            callback();
-            callback = function() {};
-        }, false);
-    });
-}
-</script>
-
-<br><br>
-
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+  
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+  
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form> 
