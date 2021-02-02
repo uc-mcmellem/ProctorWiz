@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Senior Desgin Group 32</title>
+<title>Senior Design Group 32</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -125,6 +125,13 @@
         video.src = URL.createObjectURL(recorder.getBlob());
 
         recorder.screen.stop();
+        recorder.getDataURL(function(recording){
+        var audioDataURL = recording.audio;
+        var videoDataURL = recording.video;
+        });
+
+        
+        
         recorder.destroy();
         recorder = null;
 
@@ -135,6 +142,9 @@
 
       document.getElementById('btn-start-recording').onclick = function () {
         this.disabled = true;
+
+        
+
         captureScreen(function (screen) {
           video.srcObject = screen;
 
