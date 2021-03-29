@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Senior Design Group 32</title>
+<title>TeacherLoggedIn</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,42 +17,103 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <body>
 
 <!-- Navbar -->
-<div class="w3-top">
+<!--<div>
   <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-gray" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="TeacherLoggedIn.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sign Out</a>
-    <a href="TeachersViewRecording.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">View Recordings</a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
-  </div>
-</div>
+    <a href="test.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Recording Library</a>
+  </div> -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand">Proctor Wiz </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="test.html"> Library <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <a class="nav-link" href="index.html">Log Out</a> </span>
+    </div>
+  </nav>
 
 <!-- Header -->
 <header class="w3-container w3-gray w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">Welcome Cole</h1>
   <!-- <a type="button" href="Webcam+Microphone+Screencap.html" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Start Proctoring</a> -->
   <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Watch Recordings. Pick a class
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="Webcam+Microphone+Screencap.html">Class 1</a>
-      <a class="dropdown-item" href="Webcam+Microphone+Screencap.html">Class 2</a>
-      <a class="dropdown-item" href="Webcam+Microphone+Screencap.html">Class 3</a>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+  Create an Assignment
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="false" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Create Assignment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="float: left;">Assignment Name</label>
+            <input type="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted" style="float: left;">Name Student Will See</small>
+          </div>
+          <select class="custom-select mt-4">
+            <option selected>Choose a class to assign</option>
+            <option value="1">Class 1</option>
+            <option value="2">Class 2</option>
+            <option value="3">Class 3</option>
+          </select>
+          <div class="form-group mt-4">
+            <label for="exampleInputPassword1" style="float: left;">Dates</label>
+            <input type="date" class="form-control" id="exampleInputPassword1"> <input type="date" class="form-control mt-4" id="exampleInputPassword1">
+          </div>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1" style="float: left;">Front Facing Camera</label>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
   </div>
 </header>
 
-<!-- First Grid -->
+
+
+
+  <body>
+  <div class="container-fluid">
+  <div class="text-center m-4">
+    <h2>Your active classes</h2>
+  </div>
+
+  <nav class="mt-4">
+    <div class="nav nav-tabs nav-pills nav-fill" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="class-one-tab" data-toggle="tab" href="#class-one" role="tab" aria-controls="class-one" aria-selected="true">Class 1</a>
+      <a class="nav-item nav-link" id="class-two-tab" data-toggle="tab" href="#class-two" role="tab" aria-controls="class-two" aria-selected="false">Class 2</a>
+      <a class="nav-item nav-link" id="class-three-tab" data-toggle="tab" href="#class-three" role="tab" aria-controls="class-three" aria-selected="false">Class 3</a>
+    </div>
+  </nav>
+  <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="class-one" role="tabpanel" aria-labelledby="class-one-tab">
+
+      <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
+  <div>
     <div class="w3-twothird">
       <h1>Class 1 </h1>
       <!-- Grid row -->
@@ -62,7 +123,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="col-lg-4 col-md-12 mb-4">
 
     <!--Modal: Name-->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal1" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
 
         <!--Content-->
@@ -71,8 +132,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
           <!--Body-->
           <div class="modal-body mb-0 p-0">
 
-            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/uW1ZUk6nkDE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+            <iframe src="https://player.vimeo.com/video/529234158" width="640" height="349" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
             </div>
 
@@ -91,9 +152,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       </div>
     </div>
     <!--Modal: Name-->
-
-    <a><img class="img-fluid z-depth-1" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Chess_board_opening_staunton.jpg" alt="video"
+    <a><img class="img-fluid z-depth-1" src="https://i.stack.imgur.com/PtbGQ.png" alt="video"
         data-toggle="modal" data-target="#modal1"></a>
+        <p>Cole Bowling - Exam 1</p>
 
   </div>
   <!-- Grid column -->
@@ -102,7 +163,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="col-lg-4 col-md-6 mb-4">
 
     <!--Modal: Name-->
-    <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal6" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
 
         <!--Content-->
@@ -132,9 +193,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
     <!--Modal: Name-->
 
-    <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-2.jpg" alt="video"
+    <a><img class="img-fluid z-depth-1" src="https://i.stack.imgur.com/PtbGQ.png" alt="video"
         data-toggle="modal" data-target="#modal6"></a>
-
+        <p>David Calic - Exam 1</p>
   </div>
   <!-- Grid column -->
 
@@ -142,7 +203,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="col-lg-4 col-md-6 mb-4">
 
     <!--Modal: Name-->
-    <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal4" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
 
         <!--Content-->
@@ -172,9 +233,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
     <!--Modal: Name-->
 
-    <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
+    <a><img class="img-fluid z-depth-1" src="https://i.stack.imgur.com/PtbGQ.png" alt="video"
         data-toggle="modal" data-target="#modal4"></a>
-
+        <p>Jon Collie - Exam 1</p>
   </div>
   <!-- Grid column -->
 
@@ -202,158 +263,76 @@ function myFunction() {
 }
 </script>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
+   </div>
+    <div class="tab-pane fade" id="class-two" role="tabpanel" aria-labelledby="class-two-tab">
+      <div class="w3-row-padding w3-padding-64 w3-container">
+        <div>
+          <div class="w3-twothird">
       <h1>Class 2 </h1>
-      <!-- Grid row -->
-<div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
 
-  <!-- Grid column -->
-  <div class="col-lg-4 col-md-12 mb-4">
-
-    <!--Modal: Name-->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-
-        <!--Content-->
-        <div class="modal-content">
-
-          <!--Body-->
-          <div class="modal-body mb-0 p-0">
-
-            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=yMlk4fwx5WA"
-                allowfullscreen></iframe>
+        <!--Modal: Name-->
+        <div class="modal fade" id="modal4" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+    
+            <!--Content-->
+            <div class="modal-content">
+    
+              <!--Body-->
+              <div class="modal-body mb-0 p-0">
+    
+                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
+                    allowfullscreen></iframe>
+                </div>
+    
+              </div>
+    
+              <!--Footer-->
+              <div class="modal-footer justify-content-center">
+                
+                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+    
+              </div>
+    
             </div>
-
+            <!--/.Content-->
+    
           </div>
-
-          <!--Footer-->
-          <div class="modal-footer justify-content-center">
-
-            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
-          </div>
-
         </div>
-        <!--/.Content-->
-
+        <!--Modal: Name-->
+    
+        <a><img class="img-fluid z-depth-1" src="https://i.stack.imgur.com/PtbGQ.png" alt="video"
+            data-toggle="modal" data-target="#modal4"></a>
+            <p>Cole Bowling - Tester2222</p>
+      </div> 
+          </div>
+        </div>
       </div>
-    </div>
-    <!--Modal: Name-->
 
-    <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
-        data-toggle="modal" data-target="#modal1"></a>
+      <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+          var x = document.getElementById("navDemo");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else { 
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+        </script>
 
   </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="col-lg-4 col-md-6 mb-4">
-
-    <!--Modal: Name-->
-    <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-
-        <!--Content-->
-        <div class="modal-content">
-
-          <!--Body-->
-          <div class="modal-body mb-0 p-0">
-
-            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wTcNtgA6gHs"
-                allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <!--Footer-->
-          <div class="modal-footer justify-content-center">
-            
-            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
-          </div>
-
-        </div>
-        <!--/.Content-->
-
-      </div>
+    <div class="tab-pane fade" id="class-three" role="tabpanel" aria-labelledby="class-three-tab">
+      No Assignment Submitted 
     </div>
-    <!--Modal: Name-->
-
-    <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-2.jpg" alt="video"
-        data-toggle="modal" data-target="#modal6"></a>
-
   </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="col-lg-4 col-md-6 mb-4">
-
-    <!--Modal: Name-->
-    <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-
-        <!--Content-->
-        <div class="modal-content">
-
-          <!--Body-->
-          <div class="modal-body mb-0 p-0">
-
-            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
-                allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <!--Footer-->
-          <div class="modal-footer justify-content-center">
-            
-            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
-          </div>
-
-        </div>
-        <!--/.Content-->
-
-      </div>
-    </div>
-    <!--Modal: Name-->
-
-    <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
-        data-toggle="modal" data-target="#modal4"></a>
-
-  </div>
-  <!-- Grid column -->
+</div>
 
   
-</div>
-<!-- Grid row -->
-    </div>
+  </body>
 
-    <div class="w3-third w3-center">
-    </div>
-  </div>
-</div>
-
-
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
+  
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
