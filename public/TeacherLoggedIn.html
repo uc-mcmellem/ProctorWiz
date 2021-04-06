@@ -50,9 +50,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
   Create an Assignment
 </button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Backdrop">
+      Add a Class
+    </button>
 
-
-<!-- Modal -->
+<!-- Modal 1 -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="false" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -89,6 +92,39 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
   </div>
 </div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="Backdrop" data-backdrop="false" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add a Class</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="float: left;">Class Name</label>
+            <input type="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <label for="exampleInputEmail1" style="float: left;">Class Roster</label>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile02">
+              <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+            </div>
+            <div class="input-group-append">
+              <span class="input-group-text" id="">Upload</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4">Create Class</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </header>
 
@@ -112,7 +148,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="tab-pane fade show active" id="class-one" role="tabpanel" aria-labelledby="class-one-tab">
 
       <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-row-padding w3-padding-5 w3-container">
   <div>
     <div class="w3-twothird">
       <h1>Class 1 </h1>
@@ -156,6 +192,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <p>Cole Bowling - Exam 1</p>
 
   </div>
+
+  
   <!-- Grid column -->
 
   <!-- Grid column -->
@@ -246,7 +284,103 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   </div>
 </div>
 
+<!-- Second Grid -->
+<div class="w3-row-padding w3-padding-5 w3-container">
+  <div>
+    <div class="w3-twothird">
+      <!-- Grid row -->
+<div class="row">
 
+  <!-- Grid column -->
+  <div class="col-lg-4 col-md-12 mb-4">
+
+    <!--Modal: Name-->
+    <div class="modal fade" id="modal1" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+
+        <!--Content-->
+        <div class="modal-content">
+
+          <!--Body-->
+          <div class="modal-body mb-0 p-0">
+
+           <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+            <iframe src="https://player.vimeo.com/video/530469183" width="640" height="349" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <!--Footer-->
+          <div class="modal-footer justify-content-center">
+
+            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+
+          </div>
+
+        </div>
+        <!--/.Content-->
+
+      </div>
+    </div>
+    <!--Modal: Name-->
+    <a><img class="img-fluid z-depth-1" src="https://i.stack.imgur.com/PtbGQ.png" alt="video"
+        data-toggle="modal" data-target="#modal1"></a>
+        <p>Helen Brennett - Exam 1</p>
+
+  </div>
+
+  
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-lg-4 col-md-6 mb-4">
+
+    <!--Modal: Name-->
+    <div class="modal fade" id="modal6" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+
+        <!--Content-->
+        <div class="modal-content">
+
+          <!--Body-->
+          <div class="modal-body mb-0 p-0">
+
+            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+              <iframe src="https://player.vimeo.com/video/530464078" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <!--Footer-->
+          <div class="modal-footer justify-content-center">
+            
+            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+
+          </div>
+
+        </div>
+        <!--/.Content-->
+
+      </div>
+    </div>
+    <!--Modal: Name-->
+
+    <a><img class="img-fluid z-depth-1" src="https://i.stack.imgur.com/PtbGQ.png" alt="video"
+        data-toggle="modal" data-target="#modal6"></a>
+        <p>Mark Chang - Exam 1</p>
+  </div>
+  <!-- Grid column -->
+
+
+  
+</div>
+<!-- Grid row -->
+    </div>
+
+    <div class="w3-third w3-center">
+    </div>
+  </div>
+</div>
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -259,6 +393,8 @@ function myFunction() {
   }
 }
 </script>
+
+
 
    </div>
     <div class="tab-pane fade" id="class-two" role="tabpanel" aria-labelledby="class-two-tab">
